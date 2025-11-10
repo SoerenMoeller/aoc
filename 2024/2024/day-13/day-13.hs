@@ -1,0 +1,54 @@
+import Data.Maybe (mapMaybe)
+
+inputFile :: String
+inputFile = "day-13-input.txt"
+
+inputFileExample :: String
+inputFileExample = "day-13-input-example.txt"
+
+type ButtonStep = (Int, Int)
+type PrizeAt = (Int, Int)
+
+group3 :: [a] -> [(a, a, a)]
+group3 [] = []
+group3 (a:b:c:xs) = (a, b, c) : group3 xs
+group3 _ = error "List size not divisible by 3"
+
+processInput :: String -> [(ButtonStep, ButtonStep, PrizeAt)]
+processInput = map parseGroup . group3 . map words . filter (not . null) . lines
+
+parseGroup :: ([String], [String], [String]) -> (ButtonStep, ButtonStep, PrizeAt)
+parseGroup (a, b, p) = (parseButton a, parseButton b, parsePrize p)
+
+parsePrize :: [String] -> PrizeAt
+parsePrize xs = ((read . tail . tail . init) (xs !! 1), (read . tail . tail) (xs !! 2))
+
+parseButton :: [String] -> ButtonStep
+parseButton xs = ((read . tail . tail . init) (xs !! 2), (read . tail . tail) (xs !! 3))
+
+calcSteps :: (ButtonStep, ButtonStep, PrizeAt) -> Maybe (Int, Int)
+calcSteps ((xa, ya), (xb, yb), (px, py))
+  | yb * xa - ya * xb == 0 = Nothing
+  | (px * yb - py * xb) `mod` (yb * xa - ya * xb) /= 0 = Nothing
+  | (px - stepsA * xa) `mod` xb /= 0 = Nothing
+  | otherwise = Just (stepsA, stepsB)
+  where
+    stepsA = (px * yb - py * xb) `div` (yb * xa - ya * xb)
+    stepsB = (px - stepsA * xa) `div` xb
+
+solveA :: [(ButtonStep, ButtonStep, PrizeAt)] -> Int
+solveA = sum . map ((+) <$> (*3) . fst <*> snd) . mapMaybe calcSteps
+
+mainA :: IO ()
+mainA = do
+    input <- processInput <$> readFile inputFile
+    print . solveA $ input
+
+adjustPrizes :: [(ButtonStep, ButtonStep, PrizeAt)] -> [(ButtonStep, ButtonStep, PrizeAt)]
+adjustPrizes = map (\(a, b, (px, py)) -> (a, b, (px + 10000000000000, py + 10000000000000)))
+
+mainB :: IO ()
+mainB = do
+    input <- adjustPrizes . processInput <$> readFile inputFile
+    print . solveA $ input
+

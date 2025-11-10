@@ -1,0 +1,1250 @@
+digraph G {
+    x00 [label="x00: 1"];
+    x01 [label="x01: 0"];
+    x02 [label="x02: 1"];
+    x03 [label="x03: 1"];
+    x04 [label="x04: 0"];
+    x05 [label="x05: 0"];
+    x06 [label="x06: 1"];
+    x07 [label="x07: 1"];
+    x08 [label="x08: 0"];
+    x09 [label="x09: 1"];
+    x10 [label="x10: 1"];
+    x11 [label="x11: 1"];
+    x12 [label="x12: 1"];
+    x13 [label="x13: 1"];
+    x14 [label="x14: 1"];
+    x15 [label="x15: 0"];
+    x16 [label="x16: 0"];
+    x17 [label="x17: 1"];
+    x18 [label="x18: 0"];
+    x19 [label="x19: 0"];
+    x20 [label="x20: 0"];
+    x21 [label="x21: 0"];
+    x22 [label="x22: 0"];
+    x23 [label="x23: 1"];
+    x24 [label="x24: 0"];
+    x25 [label="x25: 0"];
+    x26 [label="x26: 1"];
+    x27 [label="x27: 1"];
+    x28 [label="x28: 0"];
+    x29 [label="x29: 1"];
+    x30 [label="x30: 1"];
+    x31 [label="x31: 0"];
+    x32 [label="x32: 0"];
+    x33 [label="x33: 0"];
+    x34 [label="x34: 0"];
+    x35 [label="x35: 1"];
+    x36 [label="x36: 0"];
+    x37 [label="x37: 1"];
+    x38 [label="x38: 1"];
+    x39 [label="x39: 0"];
+    x40 [label="x40: 1"];
+    x41 [label="x41: 0"];
+    x42 [label="x42: 1"];
+    x43 [label="x43: 0"];
+    x44 [label="x44: 1"];
+    y00 [label="y00: 1"];
+    y01 [label="y01: 0"];
+    y02 [label="y02: 0"];
+    y03 [label="y03: 1"];
+    y04 [label="y04: 1"];
+    y05 [label="y05: 0"];
+    y06 [label="y06: 0"];
+    y07 [label="y07: 0"];
+    y08 [label="y08: 0"];
+    y09 [label="y09: 0"];
+    y10 [label="y10: 0"];
+    y11 [label="y11: 1"];
+    y12 [label="y12: 0"];
+    y13 [label="y13: 0"];
+    y14 [label="y14: 1"];
+    y15 [label="y15: 1"];
+    y16 [label="y16: 1"];
+    y17 [label="y17: 0"];
+    y18 [label="y18: 1"];
+    y19 [label="y19: 0"];
+    y20 [label="y20: 1"];
+    y21 [label="y21: 0"];
+    y22 [label="y22: 1"];
+    y23 [label="y23: 0"];
+    y24 [label="y24: 0"];
+    y25 [label="y25: 0"];
+    y26 [label="y26: 0"];
+    y27 [label="y27: 1"];
+    y28 [label="y28: 1"];
+    y29 [label="y29: 0"];
+    y30 [label="y30: 1"];
+    y31 [label="y31: 1"];
+    y32 [label="y32: 1"];
+    y33 [label="y33: 1"];
+    y34 [label="y34: 1"];
+    y35 [label="y35: 0"];
+    y36 [label="y36: 1"];
+    y37 [label="y37: 1"];
+    y38 [label="y38: 0"];
+    y39 [label="y39: 0"];
+    y40 [label="y40: 1"];
+    y41 [label="y41: 1"];
+    y42 [label="y42: 0"];
+    y43 [label="y43: 1"];
+    y44 [label="y44: 1"];
+
+    z00 [label="z00"];
+    z01 [label="z01"];
+    z02 [label="z02"];
+    z03 [label="z03"];
+    z04 [label="z04"];
+    z05 [label="z05"];
+    z06 [label="z06"];
+    z07 [label="z07"];
+    z08 [label="z08"];
+    z09 [label="z09"];
+    z10 [label="z10"];
+    z11 [label="z11"];
+    z12 [label="z12"];
+    z13 [label="z13"];
+    z14 [label="z14"];
+    z15 [label="z15"];
+    z16 [label="z16"];
+    z17 [label="z17"];
+    z18 [label="z18"];
+    z19 [label="z19"];
+    z20 [label="z20"];
+    z21 [label="z21"];
+    z22 [label="z22"];
+    z23 [label="z23"];
+    z24 [label="z24"];
+    z25 [label="z25"];
+    z26 [label="z26"];
+    z27 [label="z27"];
+    z28 [label="z28"];
+    z29 [label="z29"];
+    z30 [label="z30"];
+    z31 [label="z31"];
+    z32 [label="z32"];
+    z33 [label="z33"];
+    z34 [label="z34"];
+    z35 [label="z35"];
+    z36 [label="z36"];
+    z37 [label="z37"];
+    z38 [label="z38"];
+    z39 [label="z39"];
+    z40 [label="z40"];
+    z41 [label="z41"];
+    z42 [label="z42"];
+    z43 [label="z43"];
+    z44 [label="z44"];
+    z45 [label="z45"];
+
+    gate222 [label="OR", shape=box];
+    kgt -> gate222;
+    qmm -> gate222;
+    gate222 -> bcq;
+
+    gate221 [label="AND", shape=box];
+    x30 -> gate221;
+    y30 -> gate221;
+    gate221 -> bgj;
+
+    gate220 [label="OR", shape=box];
+    hwp -> gate220;
+    nwn -> gate220;
+    gate220 -> bkp;
+
+    gate219 [label="XOR", shape=box];
+    y44 -> gate219;
+    x44 -> gate219;
+    gate219 -> bmv;
+
+    gate218 [label="AND", shape=box];
+    x08 -> gate218;
+    y08 -> gate218;
+    gate218 -> bqm;
+
+    gate217 [label="AND", shape=box];
+    y16 -> gate217;
+    x16 -> gate217;
+    gate217 -> bss;
+
+    gate216 [label="AND", shape=box];
+    y22 -> gate216;
+    x22 -> gate216;
+    gate216 -> btq;
+
+    gate215 [label="OR", shape=box];
+    vhv -> gate215;
+    cbh -> gate215;
+    gate215 -> btv;
+
+    gate214 [label="AND", shape=box];
+    y24 -> gate214;
+    x24 -> gate214;
+    gate214 -> cbh;
+
+    gate213 [label="XOR", shape=box];
+    y29 -> gate213;
+    x29 -> gate213;
+    gate213 -> ccs;
+
+    gate212 [label="AND", shape=box];
+    y17 -> gate212;
+    x17 -> gate212;
+    gate212 -> ccw;
+
+    gate211 [label="AND", shape=box];
+    jnj -> gate211;
+    prt -> gate211;
+    gate211 -> cdb;
+
+    gate210 [label="AND", shape=box];
+    dwd -> gate210;
+    hnq -> gate210;
+    gate210 -> cdt;
+
+    gate209 [label="AND", shape=box];
+    jnr -> gate209;
+    rbk -> gate209;
+    gate209 -> chb;
+
+    gate208 [label="AND", shape=box];
+    shb -> gate208;
+    dbd -> gate208;
+    gate208 -> cjt;
+
+    gate207 [label="XOR", shape=box];
+    x36 -> gate207;
+    y36 -> gate207;
+    gate207 -> ckw;
+
+    gate206 [label="AND", shape=box];
+    y13 -> gate206;
+    x13 -> gate206;
+    gate206 -> cpr;
+
+    gate205 [label="AND", shape=box];
+    ckw -> gate205;
+    mcv -> gate205;
+    gate205 -> crk;
+
+    gate204 [label="OR", shape=box];
+    tkt -> gate204;
+    knb -> gate204;
+    gate204 -> crp;
+
+    gate203 [label="XOR", shape=box];
+    x23 -> gate203;
+    y23 -> gate203;
+    gate203 -> crt;
+
+    gate202 [label="OR", shape=box];
+    qtq -> gate202;
+    rhw -> gate202;
+    gate202 -> dbd;
+
+    gate201 [label="XOR", shape=box];
+    y12 -> gate201;
+    x12 -> gate201;
+    gate201 -> dbg;
+
+    gate200 [label="XOR", shape=box];
+    x32 -> gate200;
+    y32 -> gate200;
+    gate200 -> dfn;
+
+    gate199 [label="XOR", shape=box];
+    x13 -> gate199;
+    y13 -> gate199;
+    gate199 -> dgr;
+
+    gate198 [label="AND", shape=box];
+    y04 -> gate198;
+    x04 -> gate198;
+    gate198 -> dgw;
+
+    gate197 [label="XOR", shape=box];
+    x43 -> gate197;
+    y43 -> gate197;
+    gate197 -> dnf;
+
+    gate196 [label="OR", shape=box];
+    qmr -> gate196;
+    fjt -> gate196;
+    gate196 -> drd;
+
+    gate195 [label="XOR", shape=box];
+    x18 -> gate195;
+    y18 -> gate195;
+    gate195 -> dwd;
+
+    gate194 [label="AND", shape=box];
+    x28 -> gate194;
+    y28 -> gate194;
+    gate194 -> dwg;
+
+    gate193 [label="AND", shape=box];
+    fkb -> gate193;
+    rcc -> gate193;
+    gate193 -> fbb;
+
+    gate192 [label="XOR", shape=box];
+    x27 -> gate192;
+    y27 -> gate192;
+    gate192 -> fjc;
+
+    gate191 [label="AND", shape=box];
+    y36 -> gate191;
+    x36 -> gate191;
+    gate191 -> fjn;
+
+    gate190 [label="OR", shape=box];
+    wrt -> gate190;
+    pss -> gate190;
+    gate190 -> fjs;
+
+    gate189 [label="AND", shape=box];
+    ksh -> gate189;
+    kcc -> gate189;
+    gate189 -> fjt;
+
+    gate188 [label="XOR", shape=box];
+    kcm -> gate188;
+    grr -> gate188;
+    gate188 -> fkb;
+
+    gate187 [label="AND", shape=box];
+    mtb -> gate187;
+    jdk -> gate187;
+    gate187 -> fmr;
+
+    gate186 [label="AND", shape=box];
+    x20 -> gate186;
+    y20 -> gate186;
+    gate186 -> fpv;
+
+    gate185 [label="XOR", shape=box];
+    x11 -> gate185;
+    y11 -> gate185;
+    gate185 -> ftq;
+
+    gate184 [label="AND", shape=box];
+    x42 -> gate184;
+    y42 -> gate184;
+    gate184 -> fvc;
+
+    gate183 [label="AND", shape=box];
+    wqg -> gate183;
+    ggg -> gate183;
+    gate183 -> fvv;
+
+    gate182 [label="XOR", shape=box];
+    y37 -> gate182;
+    x37 -> gate182;
+    gate182 -> gcg;
+
+    gate181 [label="OR", shape=box];
+    qkk -> gate181;
+    tbr -> gate181;
+    gate181 -> ggg;
+
+    gate180 [label="XOR", shape=box];
+    y39 -> gate180;
+    x39 -> gate180;
+    gate180 -> gkk;
+
+    gate179 [label="XOR", shape=box];
+    x16 -> gate179;
+    y16 -> gate179;
+    gate179 -> grr;
+
+    gate178 [label="AND", shape=box];
+    x41 -> gate178;
+    y41 -> gate178;
+    gate178 -> gtv;
+
+    gate177 [label="XOR", shape=box];
+    y24 -> gate177;
+    x24 -> gate177;
+    gate177 -> hbc;
+
+    gate176 [label="XOR", shape=box];
+    x41 -> gate176;
+    y41 -> gate176;
+    gate176 -> hbk;
+
+    gate175 [label="XOR", shape=box];
+    y28 -> gate175;
+    x28 -> gate175;
+    gate175 -> hdk;
+
+    gate174 [label="AND", shape=box];
+    ttn -> gate174;
+    jmt -> gate174;
+    gate174 -> hmh;
+
+    gate173 [label="XOR", shape=box];
+    y34 -> gate173;
+    x34 -> gate173;
+    gate173 -> hnk;
+
+    gate172 [label="OR", shape=box];
+    ccw -> gate172;
+    fbb -> gate172;
+    gate172 -> hnq;
+
+    gate171 [label="OR", shape=box];
+    rmv -> gate171;
+    smj -> gate171;
+    gate171 -> hnv;
+
+    gate170 [label="OR", shape=box];
+    cdt -> gate170;
+    pnv -> gate170;
+    gate170 -> hqr;
+
+    gate169 [label="AND", shape=box];
+    x34 -> gate169;
+    y34 -> gate169;
+    gate169 -> hrd;
+
+    gate168 [label="OR", shape=box];
+    fpv -> gate168;
+    smh -> gate168;
+    gate168 -> hvv;
+
+    gate167 [label="AND", shape=box];
+    vrr -> gate167;
+    jtc -> gate167;
+    gate167 -> hwp;
+
+    gate166 [label="XOR", shape=box];
+    y22 -> gate166;
+    x22 -> gate166;
+    gate166 -> jck;
+
+    gate165 [label="OR", shape=box];
+    pps -> gate165;
+    phc -> gate165;
+    gate165 -> jdk;
+
+    gate164 [label="XOR", shape=box];
+    x35 -> gate164;
+    y35 -> gate164;
+    gate164 -> jdq;
+
+    gate163 [label="AND", shape=box];
+    y05 -> gate163;
+    x05 -> gate163;
+    gate163 -> jfq;
+
+    gate162 [label="AND", shape=box];
+    tph -> gate162;
+    hbk -> gate162;
+    gate162 -> jhd;
+
+    gate161 [label="OR", shape=box];
+    rdg -> gate161;
+    scw -> gate161;
+    gate161 -> jmt;
+
+    gate160 [label="XOR", shape=box];
+    y01 -> gate160;
+    x01 -> gate160;
+    gate160 -> jnj;
+
+    gate159 [label="XOR", shape=box];
+    y30 -> gate159;
+    x30 -> gate159;
+    gate159 -> jnr;
+
+    gate158 [label="AND", shape=box];
+    x02 -> gate158;
+    y02 -> gate158;
+    gate158 -> jrf;
+
+    gate157 [label="OR", shape=box];
+    vhj -> gate157;
+    rrn -> gate157;
+    gate157 -> jrg;
+
+    gate156 [label="AND", shape=box];
+    dgr -> gate156;
+    vnc -> gate156;
+    gate156 -> jrk;
+
+    gate155 [label="AND", shape=box];
+    rqf -> gate155;
+    hvv -> gate155;
+    gate155 -> jsd;
+
+    gate154 [label="XOR", shape=box];
+    x09 -> gate154;
+    y09 -> gate154;
+    gate154 -> jtc;
+
+    gate153 [label="OR", shape=box];
+    fmr -> gate153;
+    dgw -> gate153;
+    gate153 -> jtm;
+
+    gate152 [label="XOR", shape=box];
+    x06 -> gate152;
+    y06 -> gate152;
+    gate152 -> kcc;
+
+    gate151 [label="OR", shape=box];
+    cjt -> gate151;
+    svk -> gate151;
+    gate151 -> kcm;
+
+    gate150 [label="XOR", shape=box];
+    y42 -> gate150;
+    x42 -> gate150;
+    gate150 -> kcp;
+
+    gate149 [label="OR", shape=box];
+    jrk -> gate149;
+    cpr -> gate149;
+    gate149 -> kgn;
+
+    gate148 [label="AND", shape=box];
+    vnw -> gate148;
+    ftq -> gate148;
+    gate148 -> kgt;
+
+    gate147 [label="AND", shape=box];
+    x01 -> gate147;
+    y01 -> gate147;
+    gate147 -> kmf;
+
+    gate146 [label="AND", shape=box];
+    x38 -> gate146;
+    y38 -> gate146;
+    gate146 -> knb;
+
+    gate145 [label="AND", shape=box];
+    y29 -> gate145;
+    x29 -> gate145;
+    gate145 -> knv;
+
+    gate144 [label="OR", shape=box];
+    jfq -> gate144;
+    tsw -> gate144;
+    gate144 -> ksh;
+
+    gate143 [label="AND", shape=box];
+    ncp -> gate143;
+    drd -> gate143;
+    gate143 -> ktn;
+
+    gate142 [label="AND", shape=box];
+    bmv -> gate142;
+    fjs -> gate142;
+    gate142 -> kwh;
+
+    gate141 [label="XOR", shape=box];
+    y26 -> gate141;
+    x26 -> gate141;
+    gate141 -> mcj;
+
+    gate140 [label="OR", shape=box];
+    wdv -> gate140;
+    qph -> gate140;
+    gate140 -> mcv;
+
+    gate139 [label="OR", shape=box];
+    nnq -> gate139;
+    pfb -> gate139;
+    gate139 -> mfc;
+
+    gate138 [label="XOR", shape=box];
+    x03 -> gate138;
+    y03 -> gate138;
+    gate138 -> mgr;
+
+    gate137 [label="XOR", shape=box];
+    y04 -> gate137;
+    x04 -> gate137;
+    gate137 -> mtb;
+
+    gate136 [label="OR", shape=box];
+    crk -> gate136;
+    fjn -> gate136;
+    gate136 -> nbm;
+
+    gate135 [label="AND", shape=box];
+    y23 -> gate135;
+    x23 -> gate135;
+    gate135 -> nbr;
+
+    gate134 [label="XOR", shape=box];
+    y07 -> gate134;
+    x07 -> gate134;
+    gate134 -> ncp;
+
+    gate133 [label="OR", shape=box];
+    swq -> gate133;
+    pdb -> gate133;
+    gate133 -> njb;
+
+    gate132 [label="OR", shape=box];
+    qpk -> gate132;
+    btq -> gate132;
+    gate132 -> nkn;
+
+    gate131 [label="AND", shape=box];
+    y27 -> gate131;
+    x27 -> gate131;
+    gate131 -> nnq;
+
+    gate130 [label="XOR", shape=box];
+    x21 -> gate130;
+    y21 -> gate130;
+    gate130 -> nnr;
+
+    gate129 [label="AND", shape=box];
+    x40 -> gate129;
+    y40 -> gate129;
+    gate129 -> ntw;
+
+    gate128 [label="AND", shape=box];
+    x09 -> gate128;
+    y09 -> gate128;
+    gate128 -> nwn;
+
+    gate127 [label="AND", shape=box];
+    y31 -> gate127;
+    x31 -> gate127;
+    gate127 -> pct;
+
+    gate126 [label="AND", shape=box];
+    x19 -> gate126;
+    y19 -> gate126;
+    gate126 -> pdb;
+
+    gate125 [label="AND", shape=box];
+    rcm -> gate125;
+    fjc -> gate125;
+    gate125 -> pfb;
+
+    gate124 [label="XOR", shape=box];
+    x14 -> gate124;
+    y14 -> gate124;
+    gate124 -> pgq;
+
+    gate123 [label="AND", shape=box];
+    vnm -> gate123;
+    mgr -> gate123;
+    gate123 -> phc;
+
+    gate122 [label="AND", shape=box];
+    shp -> gate122;
+    kcp -> gate122;
+    gate122 -> pkv;
+
+    gate121 [label="AND", shape=box];
+    y18 -> gate121;
+    x18 -> gate121;
+    gate121 -> pnv;
+
+    gate120 [label="AND", shape=box];
+    x12 -> gate120;
+    y12 -> gate120;
+    gate120 -> ppp;
+
+    gate119 [label="AND", shape=box];
+    y03 -> gate119;
+    x03 -> gate119;
+    gate119 -> pps;
+
+    gate118 [label="AND", shape=box];
+    mfc -> gate118;
+    hdk -> gate118;
+    gate118 -> pqk;
+
+    gate117 [label="AND", shape=box];
+    x00 -> gate117;
+    y00 -> gate117;
+    gate117 -> prt;
+
+    gate116 [label="AND", shape=box];
+    x43 -> gate116;
+    y43 -> gate116;
+    gate116 -> pss;
+
+    gate115 [label="OR", shape=box];
+    hrd -> gate115;
+    tdb -> gate115;
+    gate115 -> pwb;
+
+    gate114 [label="AND", shape=box];
+    hnv -> gate114;
+    mcj -> gate114;
+    gate114 -> qcm;
+
+    gate113 [label="OR", shape=box];
+    wqt -> gate113;
+    ktn -> gate113;
+    gate113 -> qft;
+
+    gate112 [label="AND", shape=box];
+    x26 -> gate112;
+    y26 -> gate112;
+    gate112 -> qfv;
+
+    gate111 [label="AND", shape=box];
+    crp -> gate111;
+    gkk -> gate111;
+    gate111 -> qkk;
+
+    gate110 [label="AND", shape=box];
+    x11 -> gate110;
+    y11 -> gate110;
+    gate110 -> qmm;
+
+    gate109 [label="AND", shape=box];
+    x06 -> gate109;
+    y06 -> gate109;
+    gate109 -> qmr;
+
+    gate108 [label="OR", shape=box];
+    kmf -> gate108;
+    cdb -> gate108;
+    gate108 -> qnf;
+
+    gate107 [label="OR", shape=box];
+    sfs -> gate107;
+    hmh -> gate107;
+    gate107 -> qpd;
+
+    gate106 [label="AND", shape=box];
+    x35 -> gate106;
+    y35 -> gate106;
+    gate106 -> qph;
+
+    gate105 [label="AND", shape=box];
+    sfw -> gate105;
+    jck -> gate105;
+    gate105 -> qpk;
+
+    gate104 [label="AND", shape=box];
+    qft -> gate104;
+    twj -> gate104;
+    gate104 -> qpn;
+
+    gate103 [label="AND", shape=box];
+    y44 -> gate103;
+    x44 -> gate103;
+    gate103 -> qqr;
+
+    gate102 [label="OR", shape=box];
+    bgj -> gate102;
+    chb -> gate102;
+    gate102 -> qsj;
+
+    gate101 [label="OR", shape=box];
+    nbr -> gate101;
+    spp -> gate101;
+    gate101 -> qst;
+
+    gate100 [label="AND", shape=box];
+    y14 -> gate100;
+    x14 -> gate100;
+    gate100 -> qtq;
+
+    gate99 [label="OR", shape=box];
+    thq -> gate99;
+    knv -> gate99;
+    gate99 -> rbk;
+
+    gate98 [label="XOR", shape=box];
+    y17 -> gate98;
+    x17 -> gate98;
+    gate98 -> rcc;
+
+    gate97 [label="OR", shape=box];
+    qfv -> gate97;
+    qcm -> gate97;
+    gate97 -> rcm;
+
+    gate96 [label="AND", shape=box];
+    vtb -> gate96;
+    dfn -> gate96;
+    gate96 -> rdg;
+
+    gate95 [label="XOR", shape=box];
+    qsj -> gate95;
+    tjk -> gate95;
+    gate95 -> rdn;
+
+    gate94 [label="XOR", shape=box];
+    x25 -> gate94;
+    y25 -> gate94;
+    gate94 -> rhk;
+
+    gate93 [label="AND", shape=box];
+    kgn -> gate93;
+    pgq -> gate93;
+    gate93 -> rhw;
+
+    gate92 [label="AND", shape=box];
+    vmf -> gate92;
+    bkp -> gate92;
+    gate92 -> rjw;
+
+    gate91 [label="AND", shape=box];
+    rhk -> gate91;
+    btv -> gate91;
+    gate91 -> rmv;
+
+    gate90 [label="AND", shape=box];
+    y21 -> gate90;
+    x21 -> gate90;
+    gate90 -> rqf;
+
+    gate89 [label="XOR", shape=box];
+    y05 -> gate89;
+    x05 -> gate89;
+    gate89 -> rqw;
+
+    gate88 [label="XOR", shape=box];
+    gcg -> gate88;
+    nbm -> gate88;
+    gate88 -> rrn;
+
+    gate87 [label="OR", shape=box];
+    pqk -> gate87;
+    dwg -> gate87;
+    gate87 -> rsj;
+
+    gate86 [label="AND", shape=box];
+    y32 -> gate86;
+    x32 -> gate86;
+    gate86 -> scw;
+
+    gate85 [label="AND", shape=box];
+    y33 -> gate85;
+    x33 -> gate85;
+    gate85 -> sfs;
+
+    gate84 [label="OR", shape=box];
+    jsd -> gate84;
+    nnr -> gate84;
+    gate84 -> sfw;
+
+    gate83 [label="XOR", shape=box];
+    x15 -> gate83;
+    y15 -> gate83;
+    gate83 -> shb;
+
+    gate82 [label="OR", shape=box];
+    gtv -> gate82;
+    jhd -> gate82;
+    gate82 -> shp;
+
+    gate81 [label="AND", shape=box];
+    wsm -> gate81;
+    qnf -> gate81;
+    gate81 -> shr;
+
+    gate80 [label="AND", shape=box];
+    sqr -> gate80;
+    njb -> gate80;
+    gate80 -> smh;
+
+    gate79 [label="AND", shape=box];
+    x25 -> gate79;
+    y25 -> gate79;
+    gate79 -> smj;
+
+    gate78 [label="AND", shape=box];
+    nkn -> gate78;
+    crt -> gate78;
+    gate78 -> spp;
+
+    gate77 [label="XOR", shape=box];
+    y20 -> gate77;
+    x20 -> gate77;
+    gate77 -> sqr;
+
+    gate76 [label="XOR", shape=box];
+    x19 -> gate76;
+    y19 -> gate76;
+    gate76 -> ssf;
+
+    gate75 [label="AND", shape=box];
+    y15 -> gate75;
+    x15 -> gate75;
+    gate75 -> svk;
+
+    gate74 [label="AND", shape=box];
+    ssf -> gate74;
+    hqr -> gate74;
+    gate74 -> swq;
+
+    gate73 [label="AND", shape=box];
+    y39 -> gate73;
+    x39 -> gate73;
+    gate73 -> tbr;
+
+    gate72 [label="AND", shape=box];
+    qpd -> gate72;
+    hnk -> gate72;
+    gate72 -> tdb;
+
+    gate71 [label="OR", shape=box];
+    fvc -> gate71;
+    pkv -> gate71;
+    gate71 -> thm;
+
+    gate70 [label="AND", shape=box];
+    ccs -> gate70;
+    rsj -> gate70;
+    gate70 -> thq;
+
+    gate69 [label="XOR", shape=box];
+    y31 -> gate69;
+    x31 -> gate69;
+    gate69 -> tjk;
+
+    gate68 [label="AND", shape=box];
+    jrg -> gate68;
+    vsq -> gate68;
+    gate68 -> tkt;
+
+    gate67 [label="AND", shape=box];
+    kcm -> gate67;
+    grr -> gate67;
+    gate67 -> tnn;
+
+    gate66 [label="OR", shape=box];
+    ntw -> gate66;
+    fvv -> gate66;
+    gate66 -> tph;
+
+    gate65 [label="AND", shape=box];
+    jtm -> gate65;
+    rqw -> gate65;
+    gate65 -> tsw;
+
+    gate64 [label="XOR", shape=box];
+    y33 -> gate64;
+    x33 -> gate64;
+    gate64 -> ttn;
+
+    gate63 [label="XOR", shape=box];
+    x08 -> gate63;
+    y08 -> gate63;
+    gate63 -> twj;
+
+    gate62 [label="AND", shape=box];
+    nbm -> gate62;
+    gcg -> gate62;
+    gate62 -> vhj;
+
+    gate61 [label="AND", shape=box];
+    hbc -> gate61;
+    qst -> gate61;
+    gate61 -> vhv;
+
+    gate60 [label="XOR", shape=box];
+    x10 -> gate60;
+    y10 -> gate60;
+    gate60 -> vmf;
+
+    gate59 [label="OR", shape=box];
+    wgk -> gate59;
+    ppp -> gate59;
+    gate59 -> vnc;
+
+    gate58 [label="OR", shape=box];
+    jrf -> gate58;
+    shr -> gate58;
+    gate58 -> vnm;
+
+    gate57 [label="OR", shape=box];
+    vsm -> gate57;
+    rjw -> gate57;
+    gate57 -> vnw;
+
+    gate56 [label="OR", shape=box];
+    bqm -> gate56;
+    qpn -> gate56;
+    gate56 -> vrr;
+
+    gate55 [label="AND", shape=box];
+    x10 -> gate55;
+    y10 -> gate55;
+    gate55 -> vsm;
+
+    gate54 [label="XOR", shape=box];
+    y38 -> gate54;
+    x38 -> gate54;
+    gate54 -> vsq;
+
+    gate53 [label="OR", shape=box];
+    rdn -> gate53;
+    pct -> gate53;
+    gate53 -> vtb;
+
+    gate52 [label="AND", shape=box];
+    jdq -> gate52;
+    pwb -> gate52;
+    gate52 -> wdv;
+
+    gate51 [label="AND", shape=box];
+    dbg -> gate51;
+    bcq -> gate51;
+    gate51 -> wgk;
+
+    gate50 [label="XOR", shape=box];
+    y40 -> gate50;
+    x40 -> gate50;
+    gate50 -> wqg;
+
+    gate49 [label="AND", shape=box];
+    y07 -> gate49;
+    x07 -> gate49;
+    gate49 -> wqt;
+
+    gate48 [label="AND", shape=box];
+    dnf -> gate48;
+    thm -> gate48;
+    gate48 -> wrt;
+
+    gate47 [label="XOR", shape=box];
+    y02 -> gate47;
+    x02 -> gate47;
+    gate47 -> wsm;
+
+    gate46 [label="XOR", shape=box];
+    x00 -> gate46;
+    y00 -> gate46;
+    gate46 -> z00;
+
+    gate45 [label="XOR", shape=box];
+    prt -> gate45;
+    jnj -> gate45;
+    gate45 -> z01;
+
+    gate44 [label="XOR", shape=box];
+    wsm -> gate44;
+    qnf -> gate44;
+    gate44 -> z02;
+
+    gate43 [label="XOR", shape=box];
+    vnm -> gate43;
+    mgr -> gate43;
+    gate43 -> z03;
+
+    gate42 [label="XOR", shape=box];
+    mtb -> gate42;
+    jdk -> gate42;
+    gate42 -> z04;
+
+    gate41 [label="XOR", shape=box];
+    rqw -> gate41;
+    jtm -> gate41;
+    gate41 -> z05;
+
+    gate40 [label="XOR", shape=box];
+    ksh -> gate40;
+    kcc -> gate40;
+    gate40 -> z06;
+
+    gate39 [label="XOR", shape=box];
+    ncp -> gate39;
+    drd -> gate39;
+    gate39 -> z07;
+
+    gate38 [label="XOR", shape=box];
+    twj -> gate38;
+    qft -> gate38;
+    gate38 -> z08;
+
+    gate37 [label="XOR", shape=box];
+    vrr -> gate37;
+    jtc -> gate37;
+    gate37 -> z09;
+
+    gate36 [label="XOR", shape=box];
+    bkp -> gate36;
+    vmf -> gate36;
+    gate36 -> z10;
+
+    gate35 [label="XOR", shape=box];
+    ftq -> gate35;
+    vnw -> gate35;
+    gate35 -> z11;
+
+    gate34 [label="XOR", shape=box];
+    dbg -> gate34;
+    bcq -> gate34;
+    gate34 -> z12;
+
+    gate33 [label="XOR", shape=box];
+    dgr -> gate33;
+    vnc -> gate33;
+    gate33 -> z13;
+
+    gate32 [label="XOR", shape=box];
+    kgn -> gate32;
+    pgq -> gate32;
+    gate32 -> z14;
+
+    gate31 [label="XOR", shape=box];
+    dbd -> gate31;
+    shb -> gate31;
+    gate31 -> z15;
+
+    gate30 [label="OR", shape=box];
+    tnn -> gate30;
+    bss -> gate30;
+    gate30 -> z16;
+
+    gate29 [label="XOR", shape=box];
+    fkb -> gate29;
+    rcc -> gate29;
+    gate29 -> z17;
+
+    gate28 [label="XOR", shape=box];
+    hnq -> gate28;
+    dwd -> gate28;
+    gate28 -> z18;
+
+    gate27 [label="XOR", shape=box];
+    ssf -> gate27;
+    hqr -> gate27;
+    gate27 -> z19;
+
+    gate26 [label="XOR", shape=box];
+    sqr -> gate26;
+    njb -> gate26;
+    gate26 -> z20;
+
+    gate25 [label="XOR", shape=box];
+    rqf -> gate25;
+    hvv -> gate25;
+    gate25 -> z21;
+
+    gate24 [label="XOR", shape=box];
+    sfw -> gate24;
+    jck -> gate24;
+    gate24 -> z22;
+
+    gate23 [label="XOR", shape=box];
+    crt -> gate23;
+    nkn -> gate23;
+    gate23 -> z23;
+
+    gate22 [label="XOR", shape=box];
+    qst -> gate22;
+    hbc -> gate22;
+    gate22 -> z24;
+
+    gate21 [label="XOR", shape=box];
+    btv -> gate21;
+    rhk -> gate21;
+    gate21 -> z25;
+
+    gate20 [label="XOR", shape=box];
+    mcj -> gate20;
+    hnv -> gate20;
+    gate20 -> z26;
+
+    gate19 [label="XOR", shape=box];
+    fjc -> gate19;
+    rcm -> gate19;
+    gate19 -> z27;
+
+    gate18 [label="XOR", shape=box];
+    hdk -> gate18;
+    mfc -> gate18;
+    gate18 -> z28;
+
+    gate17 [label="XOR", shape=box];
+    ccs -> gate17;
+    rsj -> gate17;
+    gate17 -> z29;
+
+    gate16 [label="XOR", shape=box];
+    jnr -> gate16;
+    rbk -> gate16;
+    gate16 -> z30;
+
+    gate15 [label="AND", shape=box];
+    qsj -> gate15;
+    tjk -> gate15;
+    gate15 -> z31;
+
+    gate14 [label="XOR", shape=box];
+    vtb -> gate14;
+    dfn -> gate14;
+    gate14 -> z32;
+
+    gate13 [label="XOR", shape=box];
+    jmt -> gate13;
+    ttn -> gate13;
+    gate13 -> z33;
+
+    gate12 [label="XOR", shape=box];
+    qpd -> gate12;
+    hnk -> gate12;
+    gate12 -> z34;
+
+    gate11 [label="XOR", shape=box];
+    pwb -> gate11;
+    jdq -> gate11;
+    gate11 -> z35;
+
+    gate10 [label="XOR", shape=box];
+    ckw -> gate10;
+    mcv -> gate10;
+    gate10 -> z36;
+
+    gate9 [label="AND", shape=box];
+    y37 -> gate9;
+    x37 -> gate9;
+    gate9 -> z37;
+
+    gate8 [label="XOR", shape=box];
+    vsq -> gate8;
+    jrg -> gate8;
+    gate8 -> z38;
+
+    gate7 [label="XOR", shape=box];
+    crp -> gate7;
+    gkk -> gate7;
+    gate7 -> z39;
+
+    gate6 [label="XOR", shape=box];
+    wqg -> gate6;
+    ggg -> gate6;
+    gate6 -> z40;
+
+    gate5 [label="XOR", shape=box];
+    tph -> gate5;
+    hbk -> gate5;
+    gate5 -> z41;
+
+    gate4 [label="XOR", shape=box];
+    kcp -> gate4;
+    shp -> gate4;
+    gate4 -> z42;
+
+    gate3 [label="XOR", shape=box];
+    thm -> gate3;
+    dnf -> gate3;
+    gate3 -> z43;
+
+    gate2 [label="XOR", shape=box];
+    fjs -> gate2;
+    bmv -> gate2;
+    gate2 -> z44;
+
+    gate1 [label="OR", shape=box];
+    kwh -> gate1;
+    qqr -> gate1;
+    gate1 -> z45;
+
+}

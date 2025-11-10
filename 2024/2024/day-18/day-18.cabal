@@ -1,0 +1,9 @@
+name:                myproject
+version:             0.1.0.0
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable day-18
+  main-is:           day-18.hs
+  build-depends:     base >=4.7 && <5, containers, heap, deepseq
+  default-language:  Haskell2010
