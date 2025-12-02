@@ -1,4 +1,5 @@
 // imports
+mod day02;
 mod day01;
 
 fn main() {
@@ -10,6 +11,7 @@ fn main() {
 
     match day {
         // days
+        2 => day02::run(),
         1 => day01::run(),
         _ => panic!("Day not implemented"),
     }
