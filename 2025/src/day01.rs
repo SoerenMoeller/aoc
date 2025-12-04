@@ -13,26 +13,26 @@ fn parse_line(line: &str) -> i64 {
     let dir = cap[1].chars().next().unwrap();       // 'L' or 'R'
     let num: i64 = cap[2].parse().expect("Failed to parse number");
 
-    return match dir {
+    match dir {
         'L' => -num,
         'R' => num,
         _ => panic!("Unexpected direction"),
-    };
+    }
 }
 
 fn part1(input: &str) -> usize {
-    return input.lines()
-        .map(|line| parse_line(line))   
+    input.lines()
+        .map(parse_line)   
         .scan(50, |acc, x| {
             *acc = (*acc + x) % 100;   
             Some(*acc)                
         })
         .filter(|&x| x == 0)         
-        .count();                    
+        .count()
 }
 
 fn part2(input: &str) -> i64 {
-    let parsed_input = input.lines().map(|line| parse_line(line)).collect::<Vec<i64>>();
+    let parsed_input = input.lines().map(parse_line).collect::<Vec<i64>>();
     
     let mut value: i64 = 50;
     let mut count: i64 = 0;
@@ -49,6 +49,7 @@ fn part2(input: &str) -> i64 {
 
         value = raw.rem_euclid(100);
     } 
-    return count;
+    
+    count
 }
 

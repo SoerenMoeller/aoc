@@ -7,6 +7,26 @@ src="src/day$day.rs"
 input="inputs/day$day.txt"
 main="src/main.rs"
 
+# --- portable sed append that auto-escapes slashes ---
+sed_append() {
+    local pattern="$1"
+    local text="$2"
+    local file="$3"
+
+    # Escape / in pattern for sed
+    local escaped_pattern
+    escaped_pattern=$(printf "%s" "$pattern" | sed 's/\//\\\//g')
+
+    if sed --version >/dev/null 2>&1; then
+        # GNU sed
+        sed -i "/$escaped_pattern/a $text" "$file"
+    else
+        # BSD sed
+        sed -i '' "/$escaped_pattern/a \\
+$text" "$file"
+    fi
+}
+
 # 1. Create source + input files
 if [ ! -f "$src" ]; then
     cat > "$src" <<EOF
@@ -34,13 +54,13 @@ echo "Created $input"
 
 # 2. Insert `mod dayXX;` under the `// imports` marker
 if ! grep -q "mod day$day;" "$main"; then
-    sed -i "/\/\/ imports/a mod day$day;" "$main"
+    sed_append "// imports" "mod day$day;" "$main"
     echo "Added mod day$day; to $main"
 fi
 
 # 3. Insert match arm under the `// days` marker
 if ! grep -q "$day =>" "$main"; then
-    sed -i "/\/\/ days/a \ \ \ \ \ \ \ \ $((10#$day)) => day$day::run()," "$main"
+    sed_append "// days" "        $((10#$day)) => day$day::run()," "$main"
     echo "Added match arm for day $day"
 fi
 
