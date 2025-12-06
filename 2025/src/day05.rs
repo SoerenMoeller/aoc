@@ -7,7 +7,7 @@ pub fn run(day: u32, ex: bool) {
 
     let input = std::fs::read_to_string(&filename).unwrap();
     let (block1, block2) = input.split_once("\n\n").unwrap();
-    
+
     let ranges = block1
         .lines()
         .map(|line| {
@@ -18,7 +18,7 @@ pub fn run(day: u32, ex: bool) {
             }
         })
         .collect::<Vec<Range>>();
-    
+
     let numbers_to_check = block2
         .lines()
         .map(|line| line.parse::<u64>().unwrap())
@@ -43,9 +43,7 @@ fn is_in_range(value: u64, range: &Range) -> bool {
 fn part1((ranges, numbers_to_check): &(Vec<Range>, Vec<u64>)) -> u64 {
     numbers_to_check
         .iter()
-        .filter(|&&number| {
-            ranges.iter().any(|range| is_in_range(number, range))
-        })
+        .filter(|&&number| ranges.iter().any(|range| is_in_range(number, range)))
         .count() as u64
 }
 
@@ -58,12 +56,12 @@ fn part2((ranges, _numbers_to_check): &(Vec<Range>, Vec<u64>)) -> u64 {
         start: sorted_ranges[0].start,
         end: sorted_ranges[0].end,
     };
-    
+
     for range in sorted_ranges {
         if range.start <= current_range.end + 1 {
             current_range.end = current_range.end.max(range.end);
             continue;
-        }             
+        }
         new_ranges.push(current_range);
         current_range = Range {
             start: range.start,

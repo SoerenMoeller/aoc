@@ -72,7 +72,7 @@ fi
 
 # 3. Insert match arm under the `// days` marker
 if ! grep -q "$day =>" "$main"; then
-    sed_append "// days" "        $((10#$day)) => day$day::run()," "$main"
+    sed_append "// days" "        $((10#$day)) => day$day::run(day, ex)," "$main"
     echo "Added match arm for day $day"
 fi
 

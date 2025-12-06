@@ -4,6 +4,7 @@ mod day02;
 mod day03;
 mod day04;
 mod day05;
+mod day06;
 
 fn main() {
     let mut args = std::env::args().skip(1);
@@ -25,6 +26,7 @@ fn main() {
 
     match day {
         // days
+        6 => day06::run(day, ex),
         5 => day05::run(day, ex),
         4 => day04::run(),
         3 => day03::run(),
