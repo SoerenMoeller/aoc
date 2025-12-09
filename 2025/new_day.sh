@@ -5,6 +5,7 @@ day=$(printf "%02d" "$1")
 
 src="src/day$day.rs"
 input="inputs/day$day.txt"
+input_example="inputs/day${day}-example.txt"
 main="src/main.rs"
 
 # --- portable sed append that auto-escapes slashes ---
@@ -30,8 +31,16 @@ $text" "$file"
 # 1. Create source + input files
 if [ ! -f "$src" ]; then
     cat > "$src" <<EOF
-pub fn run() {
-    let input = std::fs::read_to_string("inputs/day$day.txt").unwrap();
+pub fn run(day: u32, ex: bool) {
+    let filename = if ex {
+        format!("inputs/day{:02}-example.txt", day)
+    } else {
+        format!("inputs/day{:02}.txt", day)
+    };
+
+    let input = std::fs::read_to_string(&filename)
+        .unwrap_or_else(|_| panic!("Cannot read {}", filename));
+        
     println!("Day $day – Part 1: {}", part1(&input));
     println!("Day $day – Part 2: {}", part2(&input));
 }
@@ -52,6 +61,9 @@ fi
 touch "$input"
 echo "Created $input"
 
+touch "$input_example"
+echo "Created $input_example"
+
 # 2. Insert `mod dayXX;` under the `// imports` marker
 if ! grep -q "mod day$day;" "$main"; then
     sed_append "// imports" "mod day$day;" "$main"
@@ -60,8 +72,11 @@ fi
 
 # 3. Insert match arm under the `// days` marker
 if ! grep -q "$day =>" "$main"; then
-    sed_append "// days" "        $((10#$day)) => day$day::run()," "$main"
+    sed_append "// days" "        $((10#$day)) => day$day::run(day, ex)," "$main"
     echo "Added match arm for day $day"
 fi
 
 echo "Day $day setup complete."
+
+# format
+cargo fmt
