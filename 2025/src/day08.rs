@@ -49,18 +49,18 @@ fn euclidean_distance(a: &Vec3, b: &Vec3) -> f64 {
 
 fn distance_ordered_pairs(vectors: &[Vec3]) -> Vec<(Vec3, Vec3)> {
     let mut pairs = Vec::new();
-    
+
     for i in 0..vectors.len() {
         for j in (i + 1)..vectors.len() {
             pairs.push((vectors[i].clone(), vectors[j].clone()));
         }
     }
-    
+
     pairs.sort_by_key(|(a, b)| {
         let dist = euclidean_distance(a, b);
-        (dist * 1000.0) as i64 
+        (dist * 1000.0) as i64
     });
-    
+
     pairs
 }
 
@@ -69,7 +69,7 @@ fn build_boxes(pairs: &[(Vec3, Vec3)], amount: usize) -> Vec<HashSet<Vec3>> {
 
     (0..amount).for_each(|i| {
         let (p1, p2) = &pairs[i];
-        
+
         let mut index_p1: isize = -1;
         let mut index_p2: isize = -1;
         for (idx, bx) in boxes.iter().enumerate() {
@@ -91,9 +91,7 @@ fn build_boxes(pairs: &[(Vec3, Vec3)], amount: usize) -> Vec<HashSet<Vec3>> {
             (-1, i2) => {
                 boxes[i2 as usize].insert(p1.clone());
             }
-            (i1, i2) if i1 == i2 => {
-                
-            }
+            (i1, i2) if i1 == i2 => {}
             (i1, i2) => {
                 let (i1, i2) = (i1 as usize, i2 as usize);
 
@@ -142,9 +140,7 @@ fn find_last_connection(pairs: &[(Vec3, Vec3)], total_nodes: usize) -> Option<(V
             (-1, i2) => {
                 boxes[i2 as usize].insert(p1.clone());
             }
-            (i1, i2) if i1 == i2 => {
-                
-            }
+            (i1, i2) if i1 == i2 => {}
             (i1, i2) => {
                 let (i1, i2) = (i1 as usize, i2 as usize);
 
@@ -158,7 +154,7 @@ fn find_last_connection(pairs: &[(Vec3, Vec3)], total_nodes: usize) -> Option<(V
             return Some((p1.clone(), p2.clone()));
         }
     }
-    
+
     None
 }
 
