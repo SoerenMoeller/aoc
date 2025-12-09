@@ -42,8 +42,7 @@ fn is_accessible(grid: &[Vec<Cell>], x: usize, y: usize) -> bool {
                 && *nx < grid.len() as isize
                 && *ny < grid[0].len() as isize
                 && matches!(grid[*ny as usize][*nx as usize], Cell::Paperroll)
-        })
-        .map(|(nx, ny)| (nx as usize, ny as usize));
+        });
 
     neighbors.count() < 4
 }
