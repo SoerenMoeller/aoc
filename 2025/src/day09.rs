@@ -1,4 +1,3 @@
-use std::collections::{HashSet, VecDeque};
 use std::cmp::max;
 
 pub fn run(day: u32, ex: bool) {
@@ -22,7 +21,8 @@ struct Vec2 {
 }
 
 fn part1(input: &str) -> i64 {
-    let parsed_input: Vec<Vec2> = input.lines()
+    let parsed_input: Vec<Vec2> = input
+        .lines()
         .map(|line| {
             let mut parts = line.split(',');
             Vec2 {
@@ -56,7 +56,8 @@ fn intersects(a: Vec2, b: Vec2, poly: &[Vec2]) -> bool {
     let y_min = a.y.min(b.y);
     let y_max = a.y.max(b.y);
 
-    !poly.windows(2)
+    !poly
+        .windows(2)
         .chain(std::iter::once(&[poly[poly.len() - 1], poly[0]][..]))
         .all(|w| {
             let (p1, p2) = (w[0], w[1]);
@@ -70,7 +71,8 @@ fn intersects(a: Vec2, b: Vec2, poly: &[Vec2]) -> bool {
 }
 
 fn part2(input: &str) -> i64 {
-    let poly: Vec<Vec2> = input.lines()
+    let poly: Vec<Vec2> = input
+        .lines()
         .map(|line| {
             let mut parts = line.split(',');
             Vec2 {
@@ -93,4 +95,3 @@ fn part2(input: &str) -> i64 {
     }
     max_area
 }
-
