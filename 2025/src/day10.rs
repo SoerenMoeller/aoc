@@ -1,6 +1,5 @@
-use std::collections::{HashMap, VecDeque};
-use z3::{ast::Int, Config, Context, Optimize, SatResult};
-
+use std::collections::HashMap;
+use z3::{ast::Int, Optimize, SatResult};
 
 pub fn run(day: u32, ex: bool) {
     let filename = if ex {
@@ -27,7 +26,7 @@ struct Machine {
 
 fn parse_machines(input: &str) -> Vec<Machine> {
     input
-        .lines() 
+        .lines()
         .map(|line| {
             let parts: Vec<&str> = line.split_whitespace().collect();
             let indicator_goal: Vec<bool> = parts[0]
@@ -36,27 +35,27 @@ fn parse_machines(input: &str) -> Vec<Machine> {
                 .chars()
                 .map(|c| c == '#')
                 .collect();
-            
+
             let joltage_goal = parts[parts.len() - 1][1..parts[parts.len() - 1].len() - 1]
                 .split(',')
                 .map(|s| s.parse::<usize>().unwrap())
                 .collect();
-            
+
             let button_lists: Vec<Vec<usize>> = parts[1..parts.len() - 1]
                 .iter()
                 .map(|s| {
                     s.get(1..s.len() - 1)
-                    .unwrap()
-                    .split(',')
-                    .map(|num| num.parse::<usize>().unwrap())
-                    .collect()
-                    })
+                        .unwrap()
+                        .split(',')
+                        .map(|num| num.parse::<usize>().unwrap())
+                        .collect()
+                })
                 .collect();
 
-            Machine{
-                indicator_goal, 
-                button_lists, 
-                joltage_goal 
+            Machine {
+                indicator_goal,
+                button_lists,
+                joltage_goal,
             }
         })
         .collect()
@@ -64,14 +63,14 @@ fn parse_machines(input: &str) -> Vec<Machine> {
 
 fn fewest_presses(machine: &Machine) -> usize {
     let mut reachable_states: HashMap<Vec<bool>, usize> = HashMap::new();
-    let mut to_search = vec![vec![false; machine.indicator_goal.len()]]; 
+    let mut to_search = vec![vec![false; machine.indicator_goal.len()]];
     reachable_states.insert(vec![false; machine.indicator_goal.len()], 0);
 
     let mut button_presses = 0;
     while !to_search.is_empty() {
         let mut new_to_search = vec![];
         button_presses += 1;
-        
+
         for state in &to_search {
             for button in &machine.button_lists {
                 let mut new_state = state.clone();
@@ -86,7 +85,7 @@ fn fewest_presses(machine: &Machine) -> usize {
                 new_to_search.push(new_state);
             }
         }
-            
+
         to_search = new_to_search;
     }
 
@@ -97,10 +96,7 @@ fn fewest_presses(machine: &Machine) -> usize {
 }
 
 fn part1(machines: &[Machine]) -> usize {
-    machines
-        .iter()
-        .map(fewest_presses)
-        .sum()
+    machines.iter().map(fewest_presses).sum()
 }
 
 fn fewest_presses_z3(machine: &Machine) -> Option<usize> {
@@ -113,7 +109,7 @@ fn fewest_presses_z3(machine: &Machine) -> Option<usize> {
     let xs: Vec<Int> = (0..n)
         .map(|j| {
             let name = format!("x{}", j);
-            Int::new_const(name.as_str())  // <- pass &str here
+            Int::new_const(name.as_str())
         })
         .collect();
 
@@ -139,16 +135,15 @@ fn fewest_presses_z3(machine: &Machine) -> Option<usize> {
     match opt.check(&[]) {
         SatResult::Sat => {
             let model = opt.get_model().unwrap();
-            model.eval(&total, true).and_then(|v| v.as_i64()).map(|v| v as usize)
+            model
+                .eval(&total, true)
+                .and_then(|v| v.as_i64())
+                .map(|v| v as usize)
         }
         SatResult::Unsat | SatResult::Unknown => None,
     }
 }
 
 fn part2(machines: &[Machine]) -> usize {
-    machines
-        .iter()
-        .map(|x| fewest_presses_z3(x).unwrap())
-        .sum()
+    machines.iter().map(|x| fewest_presses_z3(x).unwrap()).sum()
 }
-
