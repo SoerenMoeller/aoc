@@ -1,6 +1,6 @@
 use std::collections::HashMap;
-use std::collections::VecDeque;
 use std::collections::HashSet;
+use std::collections::VecDeque;
 
 pub fn run(day: u32, ex: bool) {
     let filename_a = if ex {
@@ -14,10 +14,10 @@ pub fn run(day: u32, ex: bool) {
         format!("inputs/day{:02}.txt", day)
     };
 
-    let input_a =
-        std::fs::read_to_string(&filename_a).unwrap_or_else(|_| panic!("Cannot read {}", filename_a));
-    let input_b =
-        std::fs::read_to_string(&filename_b).unwrap_or_else(|_| panic!("Cannot read {}", filename_b));
+    let input_a = std::fs::read_to_string(&filename_a)
+        .unwrap_or_else(|_| panic!("Cannot read {}", filename_a));
+    let input_b = std::fs::read_to_string(&filename_b)
+        .unwrap_or_else(|_| panic!("Cannot read {}", filename_b));
 
     let graph_a = get_graph(&input_a);
     let graph_b = get_graph(&input_b);
@@ -36,7 +36,6 @@ fn get_graph(input: &str) -> HashMap<&str, HashSet<&str>> {
         graph.insert(from, tos);
     });
     graph
-    
 }
 
 fn part1(graph: &HashMap<&str, HashSet<&str>>) -> u32 {
@@ -46,7 +45,7 @@ fn part1(graph: &HashMap<&str, HashSet<&str>>) -> u32 {
     let mut reachable_amount: HashMap<&str, u32> = HashMap::new();
     reachable_amount.insert(start, 1);
 
-    let mut queue: VecDeque<&str> = VecDeque::new(); 
+    let mut queue: VecDeque<&str> = VecDeque::new();
     queue.push_back(start);
 
     while let Some(current) = queue.pop_front() {
@@ -63,7 +62,7 @@ fn part1(graph: &HashMap<&str, HashSet<&str>>) -> u32 {
             }
         }
     }
-    
+
     reachable_amount[end]
 }
 
@@ -145,7 +144,15 @@ fn count_paths(
         total
     }
 
-    dfs(graph, start, end, node1, node2, VisitedState::None, &mut memo)
+    dfs(
+        graph,
+        start,
+        end,
+        node1,
+        node2,
+        VisitedState::None,
+        &mut memo,
+    )
 }
 
 fn part2(graph: &HashMap<&str, HashSet<&str>>) -> usize {
